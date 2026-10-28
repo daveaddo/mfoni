@@ -1,16 +1,89 @@
-// Replace these temporary stock images with your own exported photos in /images/.
-// Example: src: 'images/my-photo.jpg'. Keep the descriptive alt text.
+// Curated Mfoni photographs. Original filenames are retained for easy replacement.
 const photos = [
- {src:'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600&q=82',title:'Stillness',category:'PLACES',ratio:'3/2',alt:'Lake and mountains in soft evening light'},
- {src:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=82',title:'In passing',category:'PEOPLE',ratio:'3/4',alt:'Close-up portrait in natural light'},
- {src:'https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1000&q=82',title:'After dark',category:'MOMENTS',ratio:'4/5',alt:'Atmospheric evening sky'},
- {src:'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1600&q=82',title:'The city',category:'PLACES',ratio:'3/2',alt:'City architecture and illuminated buildings'},
- {src:'https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1400&q=82',title:'Somewhere quiet',category:'PLACES',ratio:'3/2',alt:'Open landscape under warm sunlight'},
- {src:'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=82',title:'Together',category:'PEOPLE',ratio:'3/2',alt:'Friends enjoying a candid moment together'},
- {src:'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1600&q=82',title:'The distance',category:'PLACES',ratio:'3/2',alt:'Mountain scenery reflected in a lake'},
- {src:'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1000&q=82',title:'A face, a moment',category:'PEOPLE',ratio:'3/4',alt:'Editorial portrait'},
- {src:'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&q=82',title:'Blue hour',category:'PLACES',ratio:'3/4',alt:'Mountain beneath a starry sky'},
- {src:'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1600&q=82',title:'Last light',category:'MOMENTS',ratio:'3/2',alt:'Warm golden sunset'}
+  {
+    "src": "images/moments/163A0630.jpg",
+    "title": "Last light",
+    "category": "MOMENTS",
+    "ratio": "1800/1200",
+    "alt": "A person watching the sun set over the water"
+  },
+  {
+    "src": "images/places/IMG_3264.jpg",
+    "title": "Through the arches",
+    "category": "PLACES",
+    "ratio": "1800/1200",
+    "alt": "A curved timber walkway framing a tree-lined path"
+  },
+  {
+    "src": "images/people/DSC09766.jpg",
+    "title": "In the frame",
+    "category": "PEOPLE",
+    "ratio": "1200/1800",
+    "alt": "A candid portrait"
+  },
+  {
+    "src": "images/moments/IMG_5953.jpg",
+    "title": "After the rain",
+    "category": "MOMENTS",
+    "ratio": "1800/1200",
+    "alt": "An illuminated Japanese street on a rainy evening"
+  },
+  {
+    "src": "images/moments/DSC09219.jpg",
+    "title": "Small gestures",
+    "category": "MOMENTS",
+    "ratio": "1800/1200",
+    "alt": "An intimate wedding detail"
+  },
+  {
+    "src": "images/places/DSC08057.jpg",
+    "title": "Under glass",
+    "category": "PLACES",
+    "ratio": "1800/1200",
+    "alt": "A lush conservatory interior"
+  },
+  {
+    "src": "images/moments/DSC09758.jpg",
+    "title": "Open air",
+    "category": "MOMENTS",
+    "ratio": "1800/1200",
+    "alt": "A paraglider above the ocean"
+  },
+  {
+    "src": "images/places/DSC07982.jpg",
+    "title": "In bloom",
+    "category": "PLACES",
+    "ratio": "1800/1200",
+    "alt": "A butterfly resting on orange blossoms"
+  },
+  {
+    "src": "images/people/DSC07727.jpg",
+    "title": "Encounter",
+    "category": "PEOPLE",
+    "ratio": "1200/1800",
+    "alt": "A portrait in natural light"
+  },
+  {
+    "src": "images/places/DSC08096.jpg",
+    "title": "Reflections",
+    "category": "PLACES",
+    "ratio": "1800/1200",
+    "alt": "A reflective walkway in evening light"
+  },
+  {
+    "src": "images/places/IMG_6285.jpg",
+    "title": "By the water",
+    "category": "PLACES",
+    "ratio": "1800/1200",
+    "alt": "A quiet canal in Japan"
+  },
+  {
+    "src": "images/places/DSC08092.jpg",
+    "title": "Details",
+    "category": "PLACES",
+    "ratio": "1800/1200",
+    "alt": "A colorful orchid in close-up"
+  }
 ];
 const gallery=document.getElementById('gallery');
 gallery.innerHTML=photos.map((p,i)=>`<figure class="photo-card" tabindex="0" role="button" aria-label="View ${p.title}" data-index="${i}"><img src="${p.src}" alt="${p.alt}" loading="${i<2?'eager':'lazy'}" style="--ratio:${p.ratio}"><figcaption><span>${p.title}</span><span>${p.category} / ${String(i+1).padStart(2,'0')}</span></figcaption></figure>`).join('');
